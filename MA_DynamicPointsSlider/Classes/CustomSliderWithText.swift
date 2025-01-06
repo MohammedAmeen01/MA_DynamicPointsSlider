@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomSliderWithText: View {
+public struct CustomSliderWithText: View {
     
     @Binding var currentValue:Double
     var minSliderValue:Double
@@ -22,7 +22,7 @@ struct CustomSliderWithText: View {
     
     @State private var sliderCurrentValTextWidth: CGFloat = 0
     
-    var body: some View {
+    public var body: some View {
         let percentage = ((currentValue-minSliderValue)/(maxSliderValue-minSliderValue))*100
         GeometryReader { geometry in
             VStack(spacing: 0) {
