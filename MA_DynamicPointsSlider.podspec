@@ -31,6 +31,7 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '13.0'
 
   s.source_files = 'MA_DynamicPointsSlider/Classes/**/*'
+  s.swift_version = '4.0'
   
   # s.resource_bundles = {
   #   'MA_DynamicPointsSlider' => ['MA_DynamicPointsSlider/Assets/*.png']
