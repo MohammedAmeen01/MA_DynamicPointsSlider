@@ -14,7 +14,7 @@ import SwiftUI
 class ViewController : UIViewController {
     
     override func viewDidLoad() {
-       
+        CustomSliderWithText.self
     }
     
     

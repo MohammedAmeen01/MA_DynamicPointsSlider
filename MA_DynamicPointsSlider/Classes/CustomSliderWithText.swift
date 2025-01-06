@@ -9,16 +9,16 @@ import SwiftUI
 
 public struct CustomSliderWithText: View {
     
-    @Binding var currentValue:Double
-    var minSliderValue:Double
-    var maxSliderValue:Double
-    var unit:String
-    var step: Double
-    var slidingValueBGImage = "chat_Icon"
-    var thumbIcon = "slider_thumb"
-    var fontFamily = "HelveticaNeue"
-    var fontsize = 14.0
-    var foregroundColor:Color = .blue
+    @Binding public var currentValue:Double
+    public var minSliderValue:Double
+    public var maxSliderValue:Double
+    public var unit:String
+    public var step: Double
+    public var slidingValueBGImage = "chat_Icon"
+    public var thumbIcon = "slider_thumb"
+    public var fontFamily = "HelveticaNeue"
+    public var fontsize = 14.0
+    public var foregroundColor:Color = .blue
     
     @State private var sliderCurrentValTextWidth: CGFloat = 0
     

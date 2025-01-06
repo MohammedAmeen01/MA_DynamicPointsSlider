@@ -1,0 +1,5 @@
+ extern const unsigned char Pods_MA_DynamicPointsSlider_ExampleVersionString[];
+ extern const double Pods_MA_DynamicPointsSlider_ExampleVersionNumber;
+
+ const unsigned char Pods_MA_DynamicPointsSlider_ExampleVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_MA_DynamicPointsSlider_Example  PROJECT:Pods-1" "\n";
+ const double Pods_MA_DynamicPointsSlider_ExampleVersionNumber __attribute__ ((used)) = (double)1.;
