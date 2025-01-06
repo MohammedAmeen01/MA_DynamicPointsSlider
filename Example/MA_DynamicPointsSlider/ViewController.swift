@@ -7,24 +7,12 @@
 //
 
 import MA_DynamicPointsSlider
-import SwiftUI
 
-struct ViewController: View {
-    @State private var sliderValue: Double = 3
-    var body: some View {
-        
-        VStack {
-            
-            VStack(alignment: .leading) {
-                Text("testing slider")
-                Spacer().frame(height: 16)
-                let minSliderValue = 1.0
-                let maxSliderValue = 7.2
-                CustomSliderWithText(currentValue: $sliderValue,minSliderValue: minSliderValue,maxSliderValue: maxSliderValue,unit: "KW",step: 0.1)
-                Spacer()
-            }
-            .padding(.horizontal, 24)
-        }
+class ViewController : UIViewController {
+    
+    override func viewDidLoad() {
+        let swiftUIViewController:CustomSliderWithText
     }
+    
     
 }

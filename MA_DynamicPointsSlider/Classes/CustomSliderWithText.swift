@@ -29,7 +29,7 @@ struct CustomSliderWithText: View {
                 let widthOfStack = (geometry.size.width)
                 
                 VStack {
-                    Text("\(currentValue, specifier: (currentValue.truncatingRemainder(dividingBy: 1) == 0) ? "%.0f" : "%.1f") \(unit)")
+                    Text("\((currentValue, specifier: (currentValue.truncatingRemainder(dividingBy: 1) == 0) ? "%.0f" : "%.1f")) \(unit)")
                         .font(Font.custom(fontFamily, size: fontsize).weight(.regular))
                         .foregroundColor(foregroundColor)
                         .frame(width: 44, height: 27)
@@ -47,11 +47,11 @@ struct CustomSliderWithText: View {
                     in: minSliderValue...maxSliderValue, step: step
                 )
                 HStack {
-                    Text("\(minSliderValue, specifier: (minSliderValue.truncatingRemainder(dividingBy: 1) == 0) ? "%.0f" : "%.1f") \(unit)")
+                    Text("\((minSliderValue, specifier: (minSliderValue.truncatingRemainder(dividingBy: 1) == 0) ? "%.0f" : "%.1f")) \(unit)")
                         .font(Font.custom(fontFamily, size: fontsize).weight(.regular))
                         .foregroundColor(foregroundColor)
                     Spacer()
-                    Text("\(maxSliderValue, specifier: (maxSliderValue.truncatingRemainder(dividingBy: 1) == 0) ? "%.0f" : "%.1f") \(unit)")
+                    Text("\((maxSliderValue, specifier: (maxSliderValue.truncatingRemainder(dividingBy: 1) == 0) ? "%.0f" : "%.1f")) \(unit)")
                         .font(Font.custom(fontFamily, size: fontsize).weight(.regular))
                         .foregroundColor(foregroundColor)
                 }

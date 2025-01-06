@@ -1,0 +1,16 @@
+PODS:
+  - MA_DynamicPointsSlider (0.1.0)
+
+DEPENDENCIES:
+  - MA_DynamicPointsSlider (from `../`)
+
+EXTERNAL SOURCES:
+  MA_DynamicPointsSlider:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MA_DynamicPointsSlider: 5c80000e7f2856387bd04a0e35331c0c1e26ffd4
+
+PODFILE CHECKSUM: e54c67378b55939fc6c348ea7b2c834b29cae446
+
+COCOAPODS: 1.16.2
