@@ -1,0 +1,23 @@
+{
+  'version': 0,
+  'use-external-names': 'false',
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/admin/Desktop/MA_DynamicPointsSlider/MA_DynamicPointsSlider/Example/build/Release-iphoneos/MA_DynamicPointsSlider/MA_DynamicPointsSlider.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/admin/Desktop/MA_DynamicPointsSlider/MA_DynamicPointsSlider/Example/build/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/unextended-module.modulemap",
+    }]
+    },
+    {
+    'type': 'directory',
+    'name': "/Users/admin/Desktop/MA_DynamicPointsSlider/MA_DynamicPointsSlider/Example/build/Release-iphoneos/MA_DynamicPointsSlider/MA_DynamicPointsSlider.framework/Headers"
+    'contents': [{
+      'type': 'file',
+      'name': "MA_DynamicPointsSlider-Swift.h",
+      'external-contents': "/Users/admin/Desktop/MA_DynamicPointsSlider/MA_DynamicPointsSlider/Example/build/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/unextended-interface-header.h",
+    }]
+    }]
+}

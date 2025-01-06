@@ -1,0 +1,10 @@
+framework module MA_DynamicPointsSlider {
+  umbrella header "MA_DynamicPointsSlider-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module MA_DynamicPointsSlider.__Swift {
+  exclude header "MA_DynamicPointsSlider-Swift.h"
+}

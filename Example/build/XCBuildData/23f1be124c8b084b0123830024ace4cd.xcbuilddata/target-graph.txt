@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+Target 'Pods-MA_DynamicPointsSlider_Tests' in project 'Pods'
+➜ Explicit dependency on target 'Pods-MA_DynamicPointsSlider_Example' in project 'Pods'
+Target 'Pods-MA_DynamicPointsSlider_Example' in project 'Pods'
+➜ Explicit dependency on target 'MA_DynamicPointsSlider' in project 'Pods'
+Target 'MA_DynamicPointsSlider' in project 'Pods' (no dependencies)
