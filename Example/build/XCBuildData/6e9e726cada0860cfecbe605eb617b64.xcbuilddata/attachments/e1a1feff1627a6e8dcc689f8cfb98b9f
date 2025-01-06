@@ -1,0 +1,15 @@
+{
+  "" : {
+    "const-values" : "/Users/admin/Desktop/Slider/Example/build/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/Objects-normal/arm64/MA_DynamicPointsSlider-master.swiftconstvalues",
+    "dependencies" : "/Users/admin/Desktop/Slider/Example/build/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/Objects-normal/arm64/MA_DynamicPointsSlider-master.d",
+    "diagnostics" : "/Users/admin/Desktop/Slider/Example/build/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/Objects-normal/arm64/MA_DynamicPointsSlider-master.dia",
+    "emit-module-dependencies" : "/Users/admin/Desktop/Slider/Example/build/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/Objects-normal/arm64/MA_DynamicPointsSlider-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/admin/Desktop/Slider/Example/build/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/Objects-normal/arm64/MA_DynamicPointsSlider-master-emit-module.dia",
+    "swift-dependencies" : "/Users/admin/Desktop/Slider/Example/build/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/Objects-normal/arm64/MA_DynamicPointsSlider-master.swiftdeps"
+  },
+  "/Users/admin/Desktop/Slider/MA_DynamicPointsSlider/Classes/CustomSliderWithText.swift" : {
+    "index-unit-output-path" : "/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/Objects-normal/arm64/CustomSliderWithText.o",
+    "llvm-bc" : "/Users/admin/Desktop/Slider/Example/build/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/Objects-normal/arm64/CustomSliderWithText.bc",
+    "object" : "/Users/admin/Desktop/Slider/Example/build/Pods.build/Release-iphoneos/MA_DynamicPointsSlider.build/Objects-normal/arm64/CustomSliderWithText.o"
+  }
+}

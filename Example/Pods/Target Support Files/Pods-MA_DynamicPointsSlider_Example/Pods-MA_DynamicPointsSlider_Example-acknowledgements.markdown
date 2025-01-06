@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## MA_DynamicPointsSlider
 
-Copyright (c) 2025 Ameen N <n.mohammedameen@gmail.com>
+Copyright (c) 2025 MohammedAmeen01 <n.mohammedameen@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

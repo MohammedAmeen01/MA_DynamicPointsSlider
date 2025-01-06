@@ -14,18 +14,10 @@ import SwiftUI
 class ViewController : UIViewController {
     
     override func viewDidLoad() {
-        _ = SwiftUIViewController(coder: <#NSCoder#>)
+        _ = CustomSliderWithText
     }
     
     
 }
 
-class SwiftUIViewController: UIHostingController<CustomSliderWithText> {
-    required init?(coder: NSCoder) {
-        super.init(coder: coder, rootView: CustomSliderWithText())
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
+
