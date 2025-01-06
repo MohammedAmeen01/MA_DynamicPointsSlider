@@ -7,12 +7,25 @@
 //
 
 import MA_DynamicPointsSlider
+import UIKit
+import SwiftUI
+
 
 class ViewController : UIViewController {
     
     override func viewDidLoad() {
-        let swiftUIViewController:CustomSliderWithText
+        _ = SwiftUIViewController(coder: <#NSCoder#>)
     }
     
     
+}
+
+class SwiftUIViewController: UIHostingController<CustomSliderWithText> {
+    required init?(coder: NSCoder) {
+        super.init(coder: coder, rootView: CustomSliderWithText())
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
