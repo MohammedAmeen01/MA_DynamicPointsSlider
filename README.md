@@ -1,6 +1,6 @@
 # MA_DynamicPointsSlider
 
-[![CI Status](https://img.shields.io/travis/Ameen N/MA_DynamicPointsSlider.svg?style=flat)](https://travis-ci.org/Ameen N/MA_DynamicPointsSlider)
+[![CI Status](https://img.shields.io/travis/MohammedAmeen01/MA_DynamicPointsSlider.svg?style=flat)](https://travis-ci.org/MohammedAmeen01/MA_DynamicPointsSlider)
 [![Version](https://img.shields.io/cocoapods/v/MA_DynamicPointsSlider.svg?style=flat)](https://cocoapods.org/pods/MA_DynamicPointsSlider)
 [![License](https://img.shields.io/cocoapods/l/MA_DynamicPointsSlider.svg?style=flat)](https://cocoapods.org/pods/MA_DynamicPointsSlider)
 [![Platform](https://img.shields.io/cocoapods/p/MA_DynamicPointsSlider.svg?style=flat)](https://cocoapods.org/pods/MA_DynamicPointsSlider)
@@ -22,7 +22,7 @@ pod 'MA_DynamicPointsSlider'
 
 ## Author
 
-Ameen N, n.mohammedameen@gmail.com
+MohammedAmeen01, n.mohammedameen@gmail.com
 
 ## License
 
