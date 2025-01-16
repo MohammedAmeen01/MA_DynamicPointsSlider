@@ -7,9 +7,14 @@
 
 import SwiftUI
 
+class PassedCurrentValue: ObservableObject {
+    @Published var currentVal = 0.0
+}
+
+
 public struct CustomSliderWithText: View {
     
-    @Binding public var currentValue:Double
+    @ObservedObject var currentValue : PassedCurrentValue
     public var minSliderValue:Double
     public var maxSliderValue:Double
     public var unit:String
@@ -18,21 +23,40 @@ public struct CustomSliderWithText: View {
     public var thumbIcon = "slider_thumb"
     public var fontFamily = "HelveticaNeue"
     public var fontsize = 14.0
-    public var foregroundColor:Color = .blue
+    public var foregroundColorY:Color = .blue
+    public var foregroundColorX:Color = .white
+
     
-    @State private var sliderCurrentValTextWidth: CGFloat = 0
+    @State public var sliderCurrentValTextWidth: CGFloat = 0
+    
+    public init(currentValue: Double, minSliderValue: Double, maxSliderValue: Double, unit: String, step: Double, slidingValueBGImage: String = "chat_Icon", thumbIcon: String = "slider_thumb", fontFamily: String = "HelveticaNeue", fontsize: Double = 14.0, foregroundColorY: Color = .blue, sliderCurrentValTextWidth: CGFloat = 0) {
+        self.currentValue = PassedCurrentValue()
+        self.minSliderValue = minSliderValue
+        self.maxSliderValue = maxSliderValue
+        self.unit = unit
+        self.step = step
+        self.slidingValueBGImage = slidingValueBGImage
+        self.thumbIcon = thumbIcon
+        self.fontFamily = fontFamily
+        self.fontsize = fontsize
+        self.foregroundColorY = foregroundColorY
+        self.sliderCurrentValTextWidth = sliderCurrentValTextWidth
+        self.currentValue.currentVal = currentValue
+    }
+    
     
     public var body: some View {
-        let percentage = ((currentValue-minSliderValue)/(maxSliderValue-minSliderValue))*100
+        let percentage = ((currentValue.currentVal-minSliderValue)/(maxSliderValue-minSliderValue))*100
         GeometryReader { geometry in
             VStack(spacing: 0) {
                 let widthOfStack = (geometry.size.width)
                 
                 VStack {
-                    Text("\((currentValue, specifier: (currentValue.truncatingRemainder(dividingBy: 1) == 0) ? "%.0f" : "%.1f")) \(unit)")
+                    let floatingValue = String(format: "%0.1f", currentValue.currentVal)
+                    Text("\(floatingValue) \(unit)")
                         .font(Font.custom(fontFamily, size: fontsize).weight(.regular))
-                        .foregroundColor(foregroundColor)
-                        .frame(width: 44, height: 27)
+                        .foregroundColor(foregroundColorX)
+//                        .frame(width: 44, height: 27)
                         .padding(.init(top: 2, leading: 4, bottom: 4, trailing: 4))
                         .modifier(GetWidthModifier(width: $sliderCurrentValTextWidth))
                         .background(
@@ -43,17 +67,19 @@ public struct CustomSliderWithText: View {
                 .offset(x: getoffset(widthOfStack,percentage,sliderCurrentValTextWidth))
                 .frame(maxWidth : .infinity, alignment: .leading)
                 Slider(
-                    value: $currentValue,
+                    value: $currentValue.currentVal,
                     in: minSliderValue...maxSliderValue, step: step
                 )
                 HStack {
-                    Text("\((minSliderValue, specifier: (minSliderValue.truncatingRemainder(dividingBy: 1) == 0) ? "%.0f" : "%.1f")) \(unit)")
+                    let minValue = String(format: "%0.1f", minSliderValue)
+                    Text("\(minValue) \(unit)")
                         .font(Font.custom(fontFamily, size: fontsize).weight(.regular))
-                        .foregroundColor(foregroundColor)
+                        .foregroundColor(foregroundColorY)
                     Spacer()
-                    Text("\((maxSliderValue, specifier: (maxSliderValue.truncatingRemainder(dividingBy: 1) == 0) ? "%.0f" : "%.1f")) \(unit)")
+                    let maxValue = String(format: "%0.1f", maxSliderValue)
+                    Text("\(maxValue) \(unit)")
                         .font(Font.custom(fontFamily, size: fontsize).weight(.regular))
-                        .foregroundColor(foregroundColor)
+                        .foregroundColor(foregroundColorY)
                 }
             }.onAppear(perform: {
                 let thumbImage = UIImage(named: thumbIcon)
@@ -62,7 +88,7 @@ public struct CustomSliderWithText: View {
         }
     }
     
-    func getoffset(_ widthOfStack: Double, _ percentage: Double,_ sliderCurrentValTextWidth: Double) -> Double {
+    public func getoffset(_ widthOfStack: Double, _ percentage: Double,_ sliderCurrentValTextWidth: Double) -> Double {
         
         let offsetValue = CGFloat(((widthOfStack/100)*percentage) - (sliderCurrentValTextWidth/2.0))
         if offsetValue.sign == .minus {
@@ -76,10 +102,10 @@ public struct CustomSliderWithText: View {
     
 }
 
-struct GetWidthModifier: ViewModifier {
-    @Binding var width: CGFloat
+public struct GetWidthModifier: ViewModifier {
+    @Binding public var width: CGFloat
 
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content.background(
             GeometryReader { geo -> Color in
                 DispatchQueue.main.async {
@@ -88,15 +114,6 @@ struct GetWidthModifier: ViewModifier {
                 return Color.clear
             }
         )
-    }
-}
-
-extension View {
-    func Print(_ item: Any) -> some View {
-        #if DEBUG
-        print(item)
-        #endif
-        return self
     }
 }
 
