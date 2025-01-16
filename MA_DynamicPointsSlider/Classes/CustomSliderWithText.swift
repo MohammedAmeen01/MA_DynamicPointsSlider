@@ -7,8 +7,11 @@
 
 import SwiftUI
 
-class PassedCurrentValue: ObservableObject {
-    @Published var currentVal = 0.0
+public class PassedCurrentValue: ObservableObject {
+    @Published public var currentVal = 0.0
+    public init(currentVal: Double = 0.0) {
+        self.currentVal = currentVal
+    }
 }
 
 
@@ -29,8 +32,8 @@ public struct CustomSliderWithText: View {
     
     @State public var sliderCurrentValTextWidth: CGFloat = 0
     
-    public init(currentValue: Double, minSliderValue: Double, maxSliderValue: Double, unit: String, step: Double, slidingValueBGImage: String = "chat_Icon", thumbIcon: String = "slider_thumb", fontFamily: String = "HelveticaNeue", fontsize: Double = 14.0, foregroundColorY: Color = .blue, sliderCurrentValTextWidth: CGFloat = 0) {
-        self.currentValue = PassedCurrentValue()
+    public init(currentValue: PassedCurrentValue,initialSliderValue: Double, minSliderValue: Double, maxSliderValue: Double, unit: String, step: Double, slidingValueBGImage: String = "chat_Icon", thumbIcon: String = "slider_thumb", fontFamily: String = "HelveticaNeue", fontsize: Double = 14.0, foregroundColorY: Color = .blue, sliderCurrentValTextWidth: CGFloat = 0) {
+        self.currentValue = currentValue
         self.minSliderValue = minSliderValue
         self.maxSliderValue = maxSliderValue
         self.unit = unit
@@ -41,7 +44,7 @@ public struct CustomSliderWithText: View {
         self.fontsize = fontsize
         self.foregroundColorY = foregroundColorY
         self.sliderCurrentValTextWidth = sliderCurrentValTextWidth
-        self.currentValue.currentVal = currentValue
+        self.currentValue.currentVal = initialSliderValue
     }
     
     
@@ -52,7 +55,7 @@ public struct CustomSliderWithText: View {
                 let widthOfStack = (geometry.size.width)
                 
                 VStack {
-                    let floatingValue = String(format: "%0.1f", currentValue.currentVal)
+                    let floatingValue = (floor(currentValue.currentVal) == currentValue.currentVal) ? String(format: "%0.0f", currentValue.currentVal) : String(format: "%0.1f", currentValue.currentVal)
                     Text("\(floatingValue) \(unit)")
                         .font(Font.custom(fontFamily, size: fontsize).weight(.regular))
                         .foregroundColor(foregroundColorX)
@@ -71,12 +74,12 @@ public struct CustomSliderWithText: View {
                     in: minSliderValue...maxSliderValue, step: step
                 )
                 HStack {
-                    let minValue = String(format: "%0.1f", minSliderValue)
+                    let minValue = (floor(minSliderValue) == minSliderValue) ? String(format: "%0.0f", minSliderValue) : String(format: "%0.1f", minSliderValue)
                     Text("\(minValue) \(unit)")
                         .font(Font.custom(fontFamily, size: fontsize).weight(.regular))
                         .foregroundColor(foregroundColorY)
                     Spacer()
-                    let maxValue = String(format: "%0.1f", maxSliderValue)
+                    let maxValue = (floor(maxSliderValue) == maxSliderValue) ? String(format: "%0.0f", maxSliderValue) : String(format: "%0.1f", maxSliderValue)
                     Text("\(maxValue) \(unit)")
                         .font(Font.custom(fontFamily, size: fontsize).weight(.regular))
                         .foregroundColor(foregroundColorY)
